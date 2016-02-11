@@ -76,5 +76,6 @@ Did not bother prefixing it with `/api`: not enough scope to build proper url st
 #### Notes
 ----------
 
+- Small project, not bothering with dev branch, or PRs
 - Apparentely there is a difference between creating apps with manage.py and django-admin.py...
 - The serializers seems good enough.
