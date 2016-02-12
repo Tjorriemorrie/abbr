@@ -1,6 +1,9 @@
+from app.serializers import UserSerializer, GroupSerializer
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from app.serializers import UserSerializer, GroupSerializer
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -17,3 +20,13 @@ class GroupViewSet(viewsets.ModelViewSet):
 	"""
 	queryset = Group.objects.all()
 	serializer_class = GroupSerializer
+
+
+
+
+@api_view(('GET',))
+def api_root(request, format=None):
+    return Response({
+        'users': reverse('user-list', request=request, format=format),
+        'snippets': reverse('snippet-list', request=request, format=format)
+    })
