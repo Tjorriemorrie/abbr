@@ -24,6 +24,9 @@ The following was established to be required from a technical perspective:
 
 It is hard to estimate the time as the work will be done intermittently 
 part-time. Best estimate is about 2 business days (2 days * 8 hours)
+Log:
+- spent about 5 hours on Thursday, many reading REST docs
+- spent about x on Friday
 
 
 ## Installation
@@ -57,13 +60,17 @@ The following libraries were used:
 ## Algorithm
 ------------
 
-Created `abbr` app for the requirement.
+Created `abbr` app for the requirement. Refer classifier.py.
+Test revealed additional complexity on complex algorithm.
  
  
 ## REST API
 -----------
 
-Did not bother prefixing it with `/api`: not enough scope to build proper url structure. 
+Did not bother prefixing it with `/api`: not enough scope to build proper url structure.
+Which also means proper routing were not set up. Please ignore.
+It seems the serializer plays a big role in the controllers, needs more investigation.
+REST library seems more exhaustive than initially thought - requires more reading.
 
 
 ### Tools used
@@ -77,5 +84,6 @@ Did not bother prefixing it with `/api`: not enough scope to build proper url st
 ----------
 
 - Small project, not bothering with dev branch, or PRs
-- Apparentely there is a difference between creating apps with manage.py and django-admin.py...
-- The serializers seems good enough.
+- Apparently there is a difference between creating apps with manage.py and django-admin.py... (learned something new)
+- The serializers seems good enough. (not sure why extracting the model is not available? @todo investigate)
+- Set locale to en-au
