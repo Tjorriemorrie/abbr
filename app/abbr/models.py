@@ -13,4 +13,4 @@ CHOICES_CLASSIFICATION = [
 class Abbreviation(models.Model):
 	long_form = models.TextField(blank=False)
 	abbreviation = models.CharField(max_length=100, blank=False)
-	classification = models.CharField(max_length=100, choices=CHOICES_CLASSIFICATION, null=True)
+	classification = models.IntegerField(choices=CHOICES_CLASSIFICATION, null=True)

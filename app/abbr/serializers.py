@@ -3,6 +3,6 @@ from .models import Abbreviation
 
 
 class AbbreviationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Abbreviation
-        fields = ('long_form', 'abbreviation', 'classification')
+	class Meta:
+		model = Abbreviation
+		fields = ('long_form', 'abbreviation', 'classification')
