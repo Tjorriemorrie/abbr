@@ -24,8 +24,9 @@ The following was established to be required from a technical perspective:
 It is hard to estimate the time as the work will be done intermittently 
 part-time. Best estimate is about 2 business days (2 days * 8 hours)
 Log:
-- spent about 5 hours on Thursday, many reading REST docs.
+- spent about 5 hours on Thursday, much thereof just reading REST docs.
 - spent about 6 hours on Friday, mostly just doing the serializer (sigh) and complex algorithm.
+- spent about 1 hour on Saturday just doing the profiling and finishing up.
 
 
 ## Installation
@@ -55,6 +56,7 @@ The following libraries were used:
 - djangorestframework   # REST API requirement
 - markdown              # Markdown support for the browsable API.
 - django-filter         # Filtering support
+- profilehooks          # seems like a nice profile decorator
 
 
 ## Algorithm
@@ -94,6 +96,7 @@ the *resource* location successfully has no content.
 2) If I pass empty data to a mail server and returns a 2xx response, I can assume
 the email was sent - clearly it should return 4xx. The wiki state 4xx as:
 > "The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing)."
+
 Thus it should be handled as invalid.
 
 
@@ -123,7 +126,7 @@ enough for now.
 ----------
 
 - Small project, not bothering with dev branch, or PRs
-- Apparently there is a difference between creating apps with manage.py and django-admin.py... (learned something new)
-- The serializers seems good enough. (not sure why extracting the model is not available? @todo investigate)
+- Apparently there is a difference between creating apps with manage.py and django-admin.py... (learned something new) but it screwed up my importing in abbr app; need to fix.
+- The serializers seems good enough. (not sure why extracting the model is not available? @todo investigate) Also updating the model isn't available (mmm, I like the validation it offers but the immutability is a bit over the top).
 - Set locale to en-au
 - I know why you hate Turkish, I'm not even going near that.
